@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite App</title>
-    <script type="module" crossorigin src="/assets/index-IJ9BLeso.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-IDcuo5eN.css">
-  </head>
-  <body>
-    <div id="app"></div>
-  </body>
+    <title>Simple HTML Example</title>
+    <style>
+        /* CSS 스타일 */
+        #app {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        img {
+            display: none;
+            max-width: 70%;
+            max-height: 70%;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <input id="userInput" type="text" placeholder="코드를 입력하세요">
+    <button onclick="checkCode()">확인</button>
+
+    <!-- 입력값이 1004이면 이미지를 보여줌 -->
+    <img id="resultImage" src="./src/assets/seon.png" alt = "정답입니다!">
+</div>
+
+<script>
+    // JavaScript 코드
+    function checkCode() {
+        var userInput = document.getElementById('userInput').value;
+        var resultImage = document.getElementById('resultImage');
+
+        // 입력값이 1004이면 이미지를 보여주고, 아니면 감춤
+        if (userInput === '1004') {
+            resultImage.style.display = 'inline';
+        } else {
+            resultImage.style.display = 'none';
+            alert('바봉!');
+        }
+    }
+</script>
+
+</body>
 </html>
